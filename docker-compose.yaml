@@ -1,0 +1,22 @@
+services:
+  mongodb:
+    image: mongo:8.0.8
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=sq
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    volumes:
+      - mongodb:/data/db
+      - mongoconfig:/data/configdb
+    networks:
+      - mongo_net
+
+volumes:
+  mongodb:
+  mongoconfig:
+
+networks:
+  mongo_net:
+    driver: bridge
