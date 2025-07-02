@@ -2,7 +2,7 @@
 ./mvnw spring-boot:run
 
 # Test
-./mvnw test
+./mvnw clean && ./mvnw test
 
 # Code Coverage report
 ./mvnw jacoco:report
